@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import { Outlet } from "react-router-dom";
 const Layout = () => {
   return (
-    <main className=" bg-gradient-to-b from-[#02396f] to-[#0f0037]">
+    <main className=" bg-[#1c1c1c]">
       <Navbar />
       <Outlet />
     </main>
