@@ -108,7 +108,7 @@ const Index = () => {
   return (
     <>
       <section
-        className=" text-white text-center relative pt-6 h-screen"
+        className=" text-white text-center relative pt-6 h-screen max-sm:mt-20"
         id="home"
       >
         <h1 className="leading-none max-sm:text-[3rem] max-sm:tracking-normal max-sm:w-[80%] text-[7rem] tracking-tight uppercase font-bold w-1/2 mx-auto">
@@ -158,7 +158,7 @@ const Index = () => {
       </section>
 
       <section
-        className="text-white text-center w-[95%] py-20 mx-auto"
+        className="text-white text-center w-[95%] max-sm:pb-10 max-sm:pt-0 py-20 mx-auto"
         id="market"
       >
         <Table />
