@@ -1,6 +1,8 @@
 # Crypto Dashboard
 
 A real-time cryptocurrency dashboard displaying key data for Bitcoin, Ethereum, and Solana.
+
+
 LIVE @  https://coin-dex.vercel.app
 ## Project Description
 
