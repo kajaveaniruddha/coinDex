@@ -2,17 +2,20 @@
 
 A real-time cryptocurrency dashboard displaying key data for Bitcoin, Ethereum, and Solana.
 
-
+https://github.com/kajaveaniruddha/coinDex/blob/main/README.md
 LIVE @  https://coin-dex.vercel.app
 ## Project Description
 
 This project provides a real-time dashboard for tracking the price, 24-hour change, and market cap of Bitcoin, Ethereum, and Solana using data from Binance.
+![image](https://github.com/kajaveaniruddha/coinDex/assets/66174998/590fff34-9375-48ff-8f88-9a442b263fc0)
 
 ## Achievements
 
 - Integrated real-time data using WebSockets from Binance.
 - Displayed cryptocurrency information with dynamic and responsive components.
 - Achieved a seamless user experience with pagination for better data navigation.
+
+![image](https://github.com/kajaveaniruddha/coinDex/assets/66174998/78d0937c-3060-44c2-af70-c9962d78e609)
 
 ## Components
 
