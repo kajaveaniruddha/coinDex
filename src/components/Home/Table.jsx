@@ -16,7 +16,7 @@ const Table = () => {
       method: "GET",
       headers: {
         accept: "application/json",
-        "x-cg-demo-api-key": import.meta.env.VITE_API_KEY_CG,
+        "x-cg-demo-api-key": import.meta.env.API_KEY_CG,
       },
     };
     const response = await fetch(url, options);
