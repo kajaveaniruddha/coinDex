@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CryptoCard from "./CryptoCard";
 import Table from "./Table";
-import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 const Index = () => {
   const [cryptoData, setCryptoData] = useState({
     bitcoin: { price: null, change: null },
@@ -108,17 +108,22 @@ const Index = () => {
   return (
     <>
       <section
-        className=" text-white text-center relative pt-6 h-screen max-sm:mt-20"
+        className=" text-white text-center relative pt-4 h-screen overflow-x-hidden"
         id="home"
       >
-        <h1 className="leading-none max-sm:text-[3rem] max-sm:tracking-normal max-sm:w-[80%] text-[7rem] tracking-tight uppercase font-bold w-1/2 mx-auto">
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.7 }}
+          className="leading-none max-sm:text-[3rem] max-md:text-[4rem] max-sm:tracking-normal text-[6.5rem] max-md:w-[80%] tracking-tight uppercase font-bold w-1/2 mx-auto"
+        >
           Real-Time{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00FF6A] to-[#FF9500]">
             Crypto
           </span>{" "}
           <br /> Companion
-        </h1>
-        <div className=" max-sm:justify-between animated-svg absolute max-sm:top-[4rem] top-[9rem] flex justify-around w-full">
+        </motion.h1>
+        <div className=" justify-around max-md:justify-between animated-svg absolute max-sm:top-[4rem] top-[9rem] flex w-full">
           <img
             loading="lazy"
             className="w-[5rem] max-sm:scale-75"
@@ -132,7 +137,12 @@ const Index = () => {
             alt="3d-fluency-ethereum"
           />
         </div>
-        <div className=" max-sm:scale-95 flex font-semibold justify-evenly w-full pt-10 max-sm:pb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="max-md:w-[80%] flex-wrap mx-auto max-sm:scale-95 flex justify-evenly gap-4 font-semibold w-full pt-10 max-sm:pb-20"
+        >
           <CryptoCard
             name="Bitcoin"
             imageSrc="/bitcoin-btc-logo.svg"
@@ -145,51 +155,54 @@ const Index = () => {
             price={cryptoData.ethereum.price}
             change={cryptoData.ethereum.change}
           />
-          <div>
-            <CryptoCard
-              name="Solana"
-              imageSrc="/solana-sol-logo.svg"
-              price={cryptoData.solana.price}
-              change={cryptoData.solana.change}
-            />
-          </div>
-        </div>
-        <a href="#market" className=" bg-gradient-to-b text-left text-3xl font-bold border sm:hidden rounded p-4">Market Update</a>
+          <CryptoCard
+            name="Solana"
+            imageSrc="/solana-sol-logo.svg"
+            price={cryptoData.solana.price}
+            change={cryptoData.solana.change}
+          />
+        </motion.div>
       </section>
 
       <section
-        className="text-white text-center w-[95%] max-sm:pb-10 max-sm:pt-0 py-20 mx-auto"
+        className="text-white text-center w-[95%] max-sm:pb-10 max-sm:pt-0 mx-auto"
         id="market"
       >
         <Table />
       </section>
       <section
-        className="text-white text-center w-[95%] py-20 mx-auto relative"
+        className="text-white text-center w-[95%] my-20 mx-auto relative border-t border-white/20"
         id="joinus"
       >
-        <h1 className="leading-none max-sm:text-[3rem] max-sm:-mt-14 text-[6rem] tracking-tight uppercase font-bold w-1/2 mx-auto">
-          Join us via{" "}
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00FF6A] to-[#FF9500]">
-            Twitter
-          </span>{" "}
-        </h1>
-        <div className="animated-svg absolute top-28 max-sm:top-10 flex justify-around max-sm:justify-between w-full">
-          <img
-            loading="lazy"
-            className="w-[5rem] max-sm:scale-75"
-            src="/3d-fluency-bitcoin.png"
-            alt="3d-fluency-ethereum"
-          />
-          <img
-            loading="lazy"
-            className="w-[5rem] max-sm:scale-75"
-            src="/3d-fluency-ethereum.png"
-            alt="3d-fluency-ethereum"
-          />
-        </div>
-        <p className=" max-sm:text-sm text-xl mt-4 ">
-          Follow our Twitter handle to connect with the crypto community!
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h1 className="pt-20 leading-none max-sm:text-[3rem] max-sm:-mt-14 text-[6rem] tracking-tight uppercase font-bold w-1/2 mx-auto">
+            Join us via{" "}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00FF6A] to-[#FF9500]">
+              Twitter
+            </span>{" "}
+          </h1>
+          <div className="animated-svg absolute top-28 max-sm:top-10 flex justify-around max-sm:justify-between w-full">
+            <img
+              loading="lazy"
+              className="w-[5rem] max-sm:scale-75"
+              src="/3d-fluency-bitcoin.png"
+              alt="3d-fluency-ethereum"
+            />
+            <img
+              loading="lazy"
+              className="w-[5rem] max-sm:scale-75"
+              src="/3d-fluency-ethereum.png"
+              alt="3d-fluency-ethereum"
+            />
+          </div>
+          <p className=" max-sm:text-sm text-xl font-thin mt-4 ">
+            Follow our Twitter handle to connect with the crypto community!
+          </p>
+        </motion.div>
       </section>
     </>
   );
